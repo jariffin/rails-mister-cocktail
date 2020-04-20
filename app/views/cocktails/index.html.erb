@@ -4,7 +4,7 @@
   <%= link_to "Add Cocktail",  new_cocktail_path %>
 
     <% @cocktails.each do |cocktail| %>
-    <div class="d-flex">
+    <div class="">
       <div class="card">
         <%= image_tag "#{cocktail.picture}", width: 200, height: 200 %>
         <%= link_to "#{cocktail.name}", cocktail_path(cocktail) %>
