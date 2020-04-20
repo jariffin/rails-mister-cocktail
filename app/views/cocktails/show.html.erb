@@ -7,11 +7,12 @@
 
 
 <div class="container m-3">
+  <%= cl_image_tag @cocktail.photo.key, width: 400, height: 300, crop: :fill) %>
   <div class>
     <div class="card">
       <h1><%= @cocktail.name %></h1>
       <%= image_tag "#{@cocktail.picture}", width: 400, height: 400 %>
-      <%= cl_image_tag @cocktail,photo.key, width: 400, height: 300, crop: :fill) %>
+
       <p>Description: <%= @cocktail.description %></p>
       <p>Ingredients:</p>
         <% @cocktail.doses.each do |dose| %>
@@ -38,3 +39,5 @@
     <%= link_to "Home", cocktails_path  %>
   </div>
 </div>
+
+
