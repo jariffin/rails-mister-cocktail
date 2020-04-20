@@ -1,18 +1,11 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.picture %>);">
-  <div class="container">
-    <h1><%= @cocktail.name %></h1>
-  </div>
-</div>
 
+<div class="container m-3 light-bg">
 
-
-<div class="container m-3">
-  <%= cl_image_tag @cocktail.photo.key, width: 400, height: 300, crop: :fill %>
   <div class>
-    <div class="card">
+    <div class="card p-3">
       <h1><%= @cocktail.name %></h1>
-      <%= image_tag "#{@cocktail.picture}", width: 400, height: 400 %>
 
+      <%= cl_image_tag @cocktail.photo.key, width: 400, height: 300, crop: :fill %>
       <p>Description: <%= @cocktail.description %></p>
       <p>Ingredients:</p>
         <% @cocktail.doses.each do |dose| %>
@@ -25,7 +18,7 @@
 
 
     <br>
-    <div class="card">
+    <div class="card p-3">
         <!-- if this form is added, we need an instance of @dose in the cocktail controller. -->
         <!-- Association lets you have a dropdown menu -->
       <%= simple_form_for [@cocktail, @dose] do |f| %>
@@ -35,6 +28,7 @@
       <% end %>
     </div>
 
+    <hr>
 
     <%= link_to "Home", cocktails_path  %>
   </div>
